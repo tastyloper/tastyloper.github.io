@@ -4,12 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tastyloper</title>
+  <title>Cho Hangmin's Portfolio Site</title>
+  <meta name="title" content="Cho Hangmin's Portfolio Site"/>
+  <meta name="description" content="Portfolio web site of Cho Hangmin (조항민, tastyloper), Front End Developer who live in South Korea.">
+  <meta name="author" content="Cho Hangmin">
+  <meta name="keywords" content="website,web,webdesign,frontend,developer,development,korea,chohangmin,tastyloper,portfolio조항민,프론트앤드,개발자,포트폴리오">
+  <meta property="og:title" content="Cho Hangmin's Portfolio Site"/>
+  <meta property="og:description" content="Portfolio web site of Cho Hangmin (조항민, tastyloper), Front End Developer who live in South Korea."/>
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://tastyloper.github.io/static/images/logo.png">
+  <meta property="og:site_name" content="Cho Hangmin's Portfolio Site">
+  <meta property="og:url" content="https://tastyloper.github.io/">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="index, follow" />
   <link rel="stylesheet" type="text/css" href="./static/css/font-awesome.min.css" />
   <link rel="stylesheet" type="text/css" href="./static/css/jquery.fullpage.min.css" />
   <link rel="stylesheet" type="text/css" href="./static/css/animate.min.css">
   <link rel="stylesheet" type="text/css" href="./static/css/swiper.min.css">
   <link rel="stylesheet" type="text/css" href="./static/css/style.css">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144505544-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-144505544-1');
+  </script>
 </head>
 <body>
   <section class="wrapper">
@@ -21,10 +41,11 @@
 
     <nav class="menu">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#slide1">About</a></li>
+        <li><a href="#slide2">Strength</a></li>
+        <li><a href="#slide3">Skill</a></li>
+        <li><a href="#slide4">Portfolio</a></li>
+        <li><a href="#slide5">Experience</a></li>
       </ul>
     </nav>
 
@@ -44,19 +65,27 @@
       <i class="fa fa-angle-down" aria-hidden="true"></i>
     </a>
 
+    <a class="gomail-btn" href="mailto:tastyloper@gmail.com">
+      <i class="fa fa-envelope-o" aria-hidden="true"></i>
+    </a>
+
+    <a class="github-btn" href="https://github.com/tastyloper" target="_blank">
+      <i class="fa fa-github" aria-hidden="true"></i>
+    </a>
+
     <ul class="nav">
       <li data-menuanchor="slide1" class="active"><a href="#slide1"><span>About</span></a></li>
       <li data-menuanchor="slide2"><a href="#slide2"><span>Strength</span></a></li>
       <li data-menuanchor="slide3"><a href="#slide3"><span>Skill</span></a></li>
       <li data-menuanchor="slide4"><a href="#slide4"><span>Portfolio</span></a></li>
       <li data-menuanchor="slide5"><a href="#slide5"><span>Experience</span></a></li>
-      <li data-menuanchor="slide6"><a href="#slide6"><span>Other</span></a></li>
     </ul>
   
     <div class="content" id="fullpage">
       <section class="section section1 active">
         <p class="sub-text animated1">Front End Developer</p>
         <h2 class="animated2">Cho Hang Min <small>조항민</small></h2>
+        <h3 class="animated3">tastyloper</h3>
       </section>
       <section class="section section2">
         <p class="sub-text animated1">Strength</p>
@@ -89,74 +118,74 @@
       </section>
       <section class="section section3">
         <p class="sub-text animated1">Skill</p>
-        <div class="skill-wrap animated2">
+        <div class="skill-wrap">
           <div class="skill-row">
-            <section class="skill-item">
+            <section class="skill-item animated2">
               <h3>JavaScript</h3>
               <div class="progress-bar">
-                <div class="progress-bar-inner" style="width: 80%"></div>
+                <div class="progress-bar-inner animated3"></div>
               </div>
               <p class="word-break">기본문법과 동작원리를 이해하고 있으며, class 기반 코딩이 가능합니다. ES2015 이후의 자바스크립트 문법 사용이 가능하며 jQuery 없이 DOM API를 다룰 수 있습니다.</p>
             </section>
-            <section class="skill-item">
-              <h3>Html</h3>
+            <section class="skill-item animated4">
+              <h3>HTML</h3>
               <div class="progress-bar">
-                <div class="progress-bar-inner" style="width: 70%"></div>
+                <div class="progress-bar-inner animated5"></div>
               </div>
               <p class="word-break">HTML에 능숙하며 시맨틱 마크업을 준수합니다. Search Engine Optimization 경험이 있고 다양한 플랫폼 및 브라우저를 지원할 수 있습니다.</p>
             </section>
-            <section class="skill-item">
-              <h3>Css/Sass</h3>
+            <section class="skill-item animated6">
+              <h3>CSS/SASS</h3>
               <div class="progress-bar">
-                <div class="progress-bar-inner" style="width: 80%"></div>
+                <div class="progress-bar-inner animated7"></div>
               </div>
               <p class="word-break">CSS에 능숙하며 다양한 플랫폼 및 브라우저를 지원할 수 있고 SASS를 활용하여 프로젝트를 해본 경험이 있습니다.</p>
             </section>
           </div>
           <div class="skill-row">
-            <section class="skill-item">
+            <section class="skill-item animated8">
               <h3>Angular</h3>
               <div class="progress-bar">
-                <div class="progress-bar-inner" style="width: 60%"></div>
+                <div class="progress-bar-inner animated9"></div>
               </div>
               <p class="word-break">Angular을 활용하여 프로젝트를 협업을 통해 개발해 본 경험이 있습니다.</p>
             </section>
-            <section class="skill-item">
+            <section class="skill-item animated10">
               <h3>Node.js</h3>
               <div class="progress-bar">
-                <div class="progress-bar-inner" style="width: 40%"></div>
+                <div class="progress-bar-inner animated11"></div>
               </div>
               <p class="word-break">Node.js를 활용해 간단한 웹 게시판을 만든 경험이 있습니다.</p>
             </section>
-            <section class="skill-item">
-              <h3>Git/GitHub</h3>
-              <div class="progress-bar">
-                <div class="progress-bar-inner" style="width: 70%"></div>
-              </div>
-              <p class="word-break">Git/GitHub을 활용한 협업 경험이 있으며, Git Flow을 사용하며, 개인 프로젝트으로 Git/GitHub 관리할 수 있습니다.</p>
-            </section>
-          </div>
-          <div class="skill-row">
-            <section class="skill-item">
+            <section class="skill-item animated12">
               <h3>PHP</h3>
               <div class="progress-bar">
-                <div class="progress-bar-inner" style="width: 70%"></div>
+                <div class="progress-bar-inner animated13"></div>
               </div>
               <p class="word-break">CodeIgniter를 이용해 기업 홈페이지, 대학교 교내 센터 홈페이지 등 다수의 프로젝트를 진행한 적이 있습니다.</p>
             </section>
-            <section class="skill-item">
+          </div>
+          <div class="skill-row">
+            <section class="skill-item animated14">
               <h3>AWS EC2</h3>
               <div class="progress-bar">
-                <div class="progress-bar-inner" style="width: 30%"></div>
+                <div class="progress-bar-inner animated15"></div>
               </div>
               <p class="word-break">AWS EC2를 활용하여 프로젝트를 배포한 경험이 있습니다.</p>
             </section>
-            <section class="skill-item">
-              <h3>NoSQL</h3>
+            <section class="skill-item animated16">
+              <h3>MySQL/NoSQL</h3>
               <div class="progress-bar">
-                <div class="progress-bar-inner" style="width: 30%"></div>
+                <div class="progress-bar-inner animated17"></div>
               </div>
-              <p class="word-break">Firebase, MongoDB를 활용해 간단한 웹 게시판을 만든 경험이 있습니다.</p>
+              <p class="word-break">MySQL로 대학교 센터 홈페이지를 만든 경험이 있으며, Firebase, MongoDB를 활용해 간단한 웹 게시판을 만든 경험이 있습니다.</p>
+            </section>
+            <section class="skill-item animated18">
+              <h3>Git/GitHub</h3>
+              <div class="progress-bar">
+                <div class="progress-bar-inner animated19"></div>
+              </div>
+              <p class="word-break">Git/GitHub을 활용한 협업 경험이 있으며, Git Flow을 사용하며, 개인 프로젝트으로 Git/GitHub 관리할 수 있습니다.</p>
             </section>
           </div>
         </div>
@@ -238,14 +267,6 @@
           </li>
         </ul>
       </section>
-      <section class="section section6">
-        <h3 class="animated1">Birthday</h3>
-        <p class="animated2">1991.07.03</p>
-        <h3 class="animated1">Email</h3>
-        <p class="animated2"><a href="mailto:tastyloper@gmail.com">tastyloper@gmail.com</a></p>
-        <h3 class="animated1">Github</h3>
-        <p class="animated2"><a href="https://github.com/tastyloper">https://github.com/tastyloper</a></p>
-      </section>
     </div>
   </section>
 
@@ -255,5 +276,11 @@
   <script type="text/javascript" src="./static/js/jquery.easings.min.js"></script>
   <script type="text/javascript" src="./static/js/scrolloverflow.min.js"></script>
   <script src="./static/js/script.js"></script>
+  <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+  <script type="text/javascript">
+    if (!wcs_add) var wcs_add = {};
+    wcs_add["wa"] = "ce8f454deb99";
+    wcs_do();
+  </script>
 </body>
 </html>

@@ -300,10 +300,11 @@ a, button {
 }
 
 .prev-btn,
-.next-btn {
+.next-btn,
+.gomail-btn,
+.github-btn {
   display: block;
   position: fixed;
-  left: 70px;
   z-index: 10;
   width: 70px;
   height: 70px;
@@ -314,6 +315,7 @@ a, button {
   cursor: pointer;
 }
 .prev-btn {
+  left: 70px;
   bottom: 150px;
   visibility: hidden;
   opacity: 0;
@@ -323,23 +325,28 @@ a, button {
   opacity: 1;
 }
 .next-btn {
+  left: 70px;
+  bottom: 70px;
+}
+.gomail-btn {
+  right: 70px;
+  bottom: 70px;
+}
+.github-btn {
+  right: 150px;
   bottom: 70px;
 }
 .prev-btn:hover,
-.next-btn:hover {
+.next-btn:hover,
+.gomail-btn:hover,
+.github-btn:hover {
   background-color: rgba(0, 0, 0, .2);
 }
 .prev-btn::after,
-.next-btn::after {
+.next-btn::after,
+.gomail-btn::after,
+.github-btn::after {
   position: absolute;
-  top: 50%;
-  left: 100%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  padding-left: 20px;
   font-size: 14px;
   text-transform: uppercase;
   opacity: 0;
@@ -348,8 +355,21 @@ a, button {
   transition: all 0.35s;
 }
 .prev-btn:hover::after,
-.next-btn:hover::after {
+.next-btn:hover::after,
+.gomail-btn:hover::after,
+.github-btn:hover::after {
   opacity: 1;
+}
+.prev-btn::after,
+.next-btn::after {
+  top: 50%;
+  left: 100%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding-left: 20px;
 }
 .prev-btn::after {
   content: "prev";
@@ -360,8 +380,27 @@ a, button {
 .next-btn.up::after {
   content: "top";
 }
+.gomail-btn::after,
+.github-btn::after {
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  padding-top: 5px;
+}
+.gomail-btn::after {
+  content: "email";
+}
+.github-btn::after {
+  content: "github";
+}
 .prev-btn i,
-.next-btn i {
+.next-btn i,
+.gomail-btn i,
+.github-btn i {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -470,6 +509,10 @@ a, button {
   font-size: 25px;
   font-weight: 200;
 }
+.section1 h3 {
+  font-size: 25px;
+  font-weight: 200;
+}
 
 .section2 .strength-list li {
   margin-bottom: 10px;
@@ -516,8 +559,81 @@ a, button {
   background-color: rgba(0, 0, 0, .1);
 }
 .section3 .skill-item .progress-bar-inner {
+  width: 0%;
   height: 15px;
   background-color: rgba(0, 0, 0, .2);
+}
+.section3 .skill-item .progress-bar-inner.progressbar-animation3 {
+  width: 30%;
+  animation: progressbar3 2s ease-out;
+}
+@keyframes progressbar3 { 
+  0%  { 
+    width: 0%;
+  } 
+  100% { 
+    width: 30%;
+  }  
+}
+.section3 .skill-item .progress-bar-inner.progressbar-animation4 {
+  width: 40%;
+  animation: progressbar4 2s ease-out;
+}
+@keyframes progressbar4 { 
+  0%  { 
+    width: 0%;
+  } 
+  100% { 
+    width: 40%;
+  }  
+}
+.section3 .skill-item .progress-bar-inner.progressbar-animation6 {
+  width: 60%;
+  animation: progressbar6 2s ease-out;
+}
+@keyframes progressbar6 { 
+  0%  { 
+    width: 0%;
+  } 
+  100% { 
+    width: 60%;
+  }  
+}
+.section3 .skill-item .progress-bar-inner.progressbar-animation7 {
+  width: 70%;
+  animation: progressbar7 2s ease-out;
+}
+@keyframes progressbar7 { 
+  0%  { 
+    width: 0%;
+  } 
+  100% { 
+    width: 70%;
+  }  
+}
+.section3 .skill-item .progress-bar-inner.progressbar-animation8 {
+  width: 80%;
+  animation: progressbar8 2s ease-out;
+}
+@keyframes progressbar8 { 
+  0%  { 
+    width: 0%;
+  } 
+  100% { 
+    width: 80%;
+  }  
+}
+.section3 .skill-item .progress-bar-inner.progressbar-animation9 {
+  width: 90%;
+  animation: progressbar9 2s ease-out;
+}
+@keyframes progressbar9 { 
+  0%  { 
+    width: 0%;
+  } 
+  100% { 
+    width: 90%;
+  }  
 }
 
 .section4 .swiper-container {
@@ -569,14 +685,4 @@ a, button {
   margin-right: 20px;
   font-size: 20px;
   font-weight: 500;
-}
-
-.section6 h3 {
-  margin-bottom: 5px;
-  font-size: 25px;
-  font-weight: 500;
-}
-.section6 p {
-  margin-bottom: 20px;
-  font-size: 20px;
 }
