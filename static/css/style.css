@@ -653,13 +653,60 @@ a, button {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  position: relative;
   padding: 70px;
   font-size: 18px;
-  background: #fff;
+  background-color: rgba(255, 255, 255, .8);
   border-right: 1px solid rgba(217, 217, 217, .4);
+}
+.section4 .swiper-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: cover;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s;
+  -moz-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+.section4 .swiper-slide:hover::after {
+  opacity: 1;
+}
+.section4 .swiper-slide:nth-child(1)::after {
+  background-image: url(../images/trello.jpg);
+}
+.section4 .swiper-slide:nth-child(2)::after {
+  background-image: url(../images/dokudoku.jpg);
+}
+.section4 .swiper-slide:nth-child(3)::after {
+  background-image: url(../images/linc.png);
+}
+.section4 .swiper-slide:nth-child(4)::after {
+  background-image: url(../images/edulab.png);
+}
+.section4 .swiper-slide:nth-child(5)::after {
+  background-image: url(../images/educ.png);
+}
+.section4 .swiper-slide:nth-child(6)::after {
+  background-image: url(../images/neomir.png);
+}
+.section4 .swiper-slide:nth-child(7)::after {
+  background-image: url(../images/dualhub.png);
+}
+.section4 .swiper-slide:nth-child(8)::after {
+  background-image: url(../images/conc.png);
 }
 .section4 .swiper-slide a {
   display: block;
+}
+.section4 .swiper-slide .sub-text {
+  margin-bottom: 10px;
 }
 .section4 .swiper-slide h3 {
   font-size: 45px;
@@ -685,4 +732,8 @@ a, button {
   margin-right: 20px;
   font-size: 20px;
   font-weight: 500;
+}
+
+@media (min-width: 1440px) {
+  
 }

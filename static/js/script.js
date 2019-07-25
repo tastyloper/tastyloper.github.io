@@ -77,22 +77,38 @@ $(document).ready(() => {
         $('.next-btn').addClass('right');
         if (!mySwiper.isBeginning) $('.prev-btn').addClass('show');
 
-        $.fn.fullpage.setAllowScrolling(false);
+        $.fn.fullpage.setAllowScrolling(false, 'down');
 
-        $(window).bind('mousewheel DOMMouseScroll', () => {
-          if (mySwiper.isBeginning || mySwiper.isEnd) {
+        window.addEventListener('wheel', (e) => {
+          if (e.deltaY < 0 && mySwiper.isBeginning) {
             setTimeout(() => {
               $.fn.fullpage.setAllowScrolling(true);
+              $.fn.fullpage.setAllowScrolling(false, 'down');
+            }, 500);
+          } else if (e.deltaY > 0 && mySwiper.isEnd) {
+            setTimeout(() => {
+              $.fn.fullpage.setAllowScrolling(true);
+              $.fn.fullpage.setAllowScrolling(false, 'up');
             }, 500);
           } else {
+            $.fn.fullpage.setAllowScrolling(true);
             $.fn.fullpage.setAllowScrolling(false);
           }
         });
 
         mySwiper.on('slideChange', () => {
-          if (!mySwiper.isBeginning) $('.prev-btn').addClass('show');
-          else $('.prev-btn').removeClass('show');
-          if (mySwiper.isEnd) $('.next-btn').removeClass('right');
+          if (!mySwiper.isBeginning) {
+            $('.prev-btn').addClass('show');
+          }
+          if (!mySwiper.isEnd) {
+            $('.next-btn').addClass('right');
+          }
+          if (mySwiper.isEnd) {
+            $('.next-btn').removeClass('right');
+          }
+          if (mySwiper.isBeginning) {
+            $('.prev-btn').removeClass('show');
+          }
         });
       } else if (index === 5) {
         $('.next-btn').addClass('up');
