@@ -138,8 +138,8 @@ a, button {
 
 .logo {
   position: absolute;
-  top: 80px;
-  left: 60px;
+  top: 30px;
+  left: 20px;
   z-index: 5;
 }
 .logo a {
@@ -153,8 +153,8 @@ a, button {
 .menu-toggle {
   display: block;
   position: absolute;
-  top: 70px;
-  right: 70px;
+  top: 20px;
+  right: 20px;
   z-index: 10;
   width: 70px;
   height: 70px;
@@ -254,10 +254,10 @@ a, button {
 }
 .menu-overlay {
   position: absolute;
-  top: 100px;
-  right: 100px;
+  top: 55px;
+  right: 55px;
   z-index: -1;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, .99);
   border-radius: 50%;
   transition: 1s;
   -webkit-transform: scale3d(0, 0, 0);
@@ -269,12 +269,10 @@ a, button {
   transform: scale3d(1, 1, 1);
 }
 .menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: fixed;
   right: 0;
   top: 0;
+  z-index: -5;
   width: 100%;
   color: #000;
   transition: ease-in-out 0.25s;
@@ -283,20 +281,33 @@ a, button {
   opacity: 0;
 }
 .menu ul {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
   list-style: none;
+  height: 100%;
+}
+.menu ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  border-right: 1px solid rgba(255, 255, 255, .05);
+}
+.menu ul li:last-child {
+  border-right: 0;
 }
 .menu a {
-  color: #000;
+  font-size: 40px;
+  color: #FFF;
   text-decoration: none;
 }
 .menu.open {
+  z-index: 9;
   visibility: visible;
   opacity: 1;
   transition: ease-in-out 0.5s;
   transition-delay: 0.25s;
-}
-.menu-overlay {
-  background: #FFF'
 }
 
 .prev-btn,
@@ -315,8 +326,8 @@ a, button {
   cursor: pointer;
 }
 .prev-btn {
-  left: 70px;
-  bottom: 150px;
+  left: 20px;
+  bottom: 100px;
   visibility: hidden;
   opacity: 0;
 }
@@ -325,16 +336,16 @@ a, button {
   opacity: 1;
 }
 .next-btn {
-  left: 70px;
-  bottom: 70px;
+  left: 20px;
+  bottom: 20px;
 }
 .gomail-btn {
-  right: 70px;
-  bottom: 70px;
+  right: 20px;
+  bottom: 20px;
 }
 .github-btn {
-  right: 150px;
-  bottom: 70px;
+  right: 100px;
+  bottom: 20px;
 }
 .prev-btn:hover,
 .next-btn:hover,
@@ -382,14 +393,14 @@ a, button {
 }
 .gomail-btn::after,
 .github-btn::after {
-  top: 100%;
+  bottom: 100%;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
-  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .gomail-btn::after {
   content: "email";
@@ -432,7 +443,7 @@ a, button {
   display: inline-block;
   position: fixed;
   top: 50%;
-  left: 98px;
+  left: 48px;
   z-index: 2;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
@@ -490,7 +501,7 @@ a, button {
   z-index: 1;
 }
 .fp-section.fp-table {
-  width: 960px;
+  width: 720px;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -502,7 +513,7 @@ a, button {
 }
 .section1 h2 {
   margin-bottom: 25px;
-  font-size: 118px;
+  font-size: 100px;
   font-weight: 100;
 }
 .section1 h2 small {
@@ -734,6 +745,88 @@ a, button {
   font-weight: 500;
 }
 
-@media (min-width: 1440px) {
-  
+@media (min-width: 1200px) {
+  .logo {
+    top: 80px;
+  }
+  .menu-toggle {
+    top: 70px;
+    right: 30px;
+  }
+  .menu-overlay {
+    top: 100px;
+    right: 60px;
+  }
+  .prev-btn {
+    left: 30px;
+    bottom: 150px;
+  }
+  .next-btn {
+    left: 30px;
+    bottom: 70px;
+  }
+  .gomail-btn {
+    right: 30px;
+    bottom: 70px;
+  }
+  .github-btn {
+    right: 110px;
+    bottom: 70px;
+  }.gomail-btn::after,
+  .github-btn::after {
+    top: 100%;
+    bottom: auto;
+    padding-top: 5px;
+    padding-bottom: 0;
+  }
+  .nav {
+    left: 58px;
+  }
+  .fp-section.fp-table {
+    width: 960px;
+  }
+  .section1 h2 {
+    font-size: 118px;
+  }
+  .section2 .strength-list li {
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 200;
+  }
+  .section2 .strength-list strong {
+    display: inline-block;
+    width: 150px;
+    margin-right: 20px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .section2 .strength-list li span {
+    font-weight: 500;
+  }
+}
+@media (min-width: 1400px) {
+  .logo {
+    left: 60px;
+  }
+  .menu-toggle {
+    right: 70px;
+  }
+  .menu-overlay {
+    right: 100px;
+  }
+  .prev-btn {
+    left: 70px;
+  }
+  .next-btn {
+    left: 70px;
+  }
+  .gomail-btn {
+    right: 70px;
+  }
+  .github-btn {
+    right: 150px;
+  }
+  .nav {
+    left: 98px;
+  }
 }

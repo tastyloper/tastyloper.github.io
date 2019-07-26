@@ -40,7 +40,18 @@ $(document).ready(() => {
 
   const mySwiper = new Swiper('.swiper-container', {
     slidesPerView: 4,
-    mousewheel: true
+    mousewheel: true,
+    breakpoints: {
+      320: {
+        slidesPerView: 1
+      },
+      1070: {
+        slidesPerView: 2
+      },
+      1440: {
+        slidesPerView: 3
+      }
+    }
   });
 
   $('#fullpage').fullpage({
@@ -77,6 +88,7 @@ $(document).ready(() => {
         $('.next-btn').addClass('right');
         if (!mySwiper.isBeginning) $('.prev-btn').addClass('show');
 
+        mySwiper.slideTo(0);
         $.fn.fullpage.setAllowScrolling(false, 'down');
 
         window.addEventListener('wheel', (e) => {
@@ -97,6 +109,20 @@ $(document).ready(() => {
         });
 
         mySwiper.on('slideChange', () => {
+          if (mySwiper.isBeginning) {
+            setTimeout(() => {
+              $.fn.fullpage.setAllowScrolling(true);
+              $.fn.fullpage.setAllowScrolling(false, 'down');
+            }, 500);
+          } else if (mySwiper.isEnd) {
+            setTimeout(() => {
+              $.fn.fullpage.setAllowScrolling(true);
+              $.fn.fullpage.setAllowScrolling(false, 'up');
+            }, 500);
+          } else {
+            $.fn.fullpage.setAllowScrolling(true);
+            $.fn.fullpage.setAllowScrolling(false);
+          }
           if (!mySwiper.isBeginning) {
             $('.prev-btn').addClass('show');
           }
@@ -150,7 +176,7 @@ $(document).ready(() => {
     }
   });
 
-  $('.menu-toggle').click(() => {
+  $('.menu-toggle, .menu a').click(() => {
     $('.menu-toggle, .menu-overlay, .menu').toggleClass('open');
   });
 
