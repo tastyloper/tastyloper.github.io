@@ -42,7 +42,7 @@ $(document).ready(() => {
     slidesPerView: 4,
     mousewheel: true,
     breakpoints: {
-      320: {
+      768: {
         slidesPerView: 1
       },
       1070: {
@@ -148,22 +148,22 @@ $(document).ready(() => {
         $isSection3Animated1.addClass('animated zoomIn');
         $isSection3Animated2.addClass('animated zoomIn').css('animation-delay', '.5s');
         $isSection3Animated3.addClass('progressbar-animation8').css('animation-delay', '.5s');
-        $isSection3Animated4.addClass('animated zoomIn').css('animation-delay', '.8s');
-        $isSection3Animated5.addClass('progressbar-animation7').css('animation-delay', '.8s');
-        $isSection3Animated6.addClass('animated zoomIn').css('animation-delay', '1.2s');
-        $isSection3Animated7.addClass('progressbar-animation9').css('animation-delay', '1.2s');
-        $isSection3Animated8.addClass('animated zoomIn').css('animation-delay', '1.5s');
-        $isSection3Animated9.addClass('progressbar-animation6').css('animation-delay', '1.5s');
-        $isSection3Animated10.addClass('animated zoomIn').css('animation-delay', '1.8s');
-        $isSection3Animated11.addClass('progressbar-animation4').css('animation-delay', '1.8s');
-        $isSection3Animated12.addClass('animated zoomIn').css('animation-delay', '2.1s');
-        $isSection3Animated13.addClass('progressbar-animation7').css('animation-delay', '2.1s');
-        $isSection3Animated14.addClass('animated zoomIn').css('animation-delay', '2.4s');
-        $isSection3Animated15.addClass('progressbar-animation3').css('animation-delay', '2.4s');
-        $isSection3Animated16.addClass('animated zoomIn').css('animation-delay', '2.7s');
-        $isSection3Animated17.addClass('progressbar-animation3').css('animation-delay', '2.7s');
-        $isSection3Animated18.addClass('animated zoomIn').css('animation-delay', '3s');
-        $isSection3Animated19.addClass('progressbar-animation7').css('animation-delay', '3s');
+        $isSection3Animated4.addClass('animated zoomIn').css('animation-delay', '.7s');
+        $isSection3Animated5.addClass('progressbar-animation7').css('animation-delay', '.7s');
+        $isSection3Animated6.addClass('animated zoomIn').css('animation-delay', '.9s');
+        $isSection3Animated7.addClass('progressbar-animation9').css('animation-delay', '.9s');
+        $isSection3Animated8.addClass('animated zoomIn').css('animation-delay', '1.1s');
+        $isSection3Animated9.addClass('progressbar-animation6').css('animation-delay', '1.1s');
+        $isSection3Animated10.addClass('animated zoomIn').css('animation-delay', '1.3s');
+        $isSection3Animated11.addClass('progressbar-animation4').css('animation-delay', '1.3s');
+        $isSection3Animated12.addClass('animated zoomIn').css('animation-delay', '1.5s');
+        $isSection3Animated13.addClass('progressbar-animation7').css('animation-delay', '1.5s');
+        $isSection3Animated14.addClass('animated zoomIn').css('animation-delay', '1.7s');
+        $isSection3Animated15.addClass('progressbar-animation3').css('animation-delay', '1.7s');
+        $isSection3Animated16.addClass('animated zoomIn').css('animation-delay', '1.9s');
+        $isSection3Animated17.addClass('progressbar-animation3').css('animation-delay', '1.9s');
+        $isSection3Animated18.addClass('animated zoomIn').css('animation-delay', '2.1s');
+        $isSection3Animated19.addClass('progressbar-animation7').css('animation-delay', '2.1s');
       } else if ((index === 1 || index === 2 || index === 3) && nextIndex === 4) {
         $isSection4Animated1.addClass('animated fadeInUp').css('animation-delay', '.7s');
         $isSection4Animated2.addClass('animated fadeInUp').css('animation-delay', '1s');
@@ -199,3 +199,31 @@ $(document).ready(() => {
 });
 
 $(window).resize(resizeNav);
+
+function rotate(el, degs) {
+  let iedegs = degs / 90;
+  if (iedegs < 0) iedegs += 4;
+  const transform = `rotate(${degs}deg)`;
+  const iefilter = `progid:DXImageTransform.Microsoft.BasicImage(rotation=${iedegs})`;
+  const styles = {
+    transform,
+    '-webkit-transform': transform,
+    '-moz-transform': transform,
+    '-o-transform': transform,
+    filter: iefilter,
+    '-ms-filter': iefilter
+  };
+  $(el).css(styles);
+}
+
+$(window).bind('orientationchange resize', (event) => {
+  if (event.orientation) {
+    if (event.orientation == 'landscape') {
+      if (window.rotation == 90) {
+        rotate(this, -90);
+      } else {
+        rotate(this, 90);
+      }
+    }
+  }
+});

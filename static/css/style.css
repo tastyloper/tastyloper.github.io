@@ -147,7 +147,7 @@ a, button {
 }
 .logo img {
   display: block;
-  width: 150px;
+  width: 100px;
 }
 
 .menu-toggle {
@@ -156,8 +156,8 @@ a, button {
   top: 20px;
   right: 20px;
   z-index: 10;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   background-color: rgba(0, 0, 0, .8);
   border-radius: 50%;
   cursor: pointer;
@@ -202,8 +202,8 @@ a, button {
   -o-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  width: 20px;
-  height: 15px;
+  width: 15px;
+  height: 12px;
 }
 .menu-toggle .menu-toggle-inner span {
   content: '';
@@ -224,12 +224,12 @@ a, button {
   transform-origin: left center;
 }
 .menu-toggle .menu-toggle-inner span:nth-child(2) {
-  top: 7px;
+  top: 5px;
   -webkit-transform-origin: left center;
   transform-origin: left center;
 }
 .menu-toggle .menu-toggle-inner span:nth-child(3) {
-  top: 14px;
+  top: 10px;
   -webkit-transform-origin: left center;
   transform-origin: left center;
 }
@@ -237,8 +237,8 @@ a, button {
   background-color: #000;
 }
 .menu-toggle.open .menu-toggle-inner span:nth-child(1) {
-  top: 1px;
-  left: 3px;
+  top: 0;
+  left: 2px;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
@@ -247,15 +247,15 @@ a, button {
   opacity: 0;
 }
 .menu-toggle.open .menu-toggle-inner span:nth-child(3) {
-  top: 15px;
-  left: 3px;
+  top: 11px;
+  left: 2px;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 .menu-overlay {
   position: absolute;
-  top: 55px;
-  right: 55px;
+  top: 50px;
+  right: 45px;
   z-index: -1;
   background: rgba(0, 0, 0, .99);
   border-radius: 50%;
@@ -282,8 +282,9 @@ a, button {
 }
 .menu ul {
   display: flex;
-  align-items: stretch;
-  justify-content: stretch;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
   list-style: none;
   height: 100%;
 }
@@ -292,13 +293,12 @@ a, button {
   align-items: center;
   justify-content: center;
   width: 20%;
-  border-right: 1px solid rgba(255, 255, 255, .05);
 }
 .menu ul li:last-child {
   border-right: 0;
 }
 .menu a {
-  font-size: 40px;
+  font-size: 25px;
   color: #FFF;
   text-decoration: none;
 }
@@ -317,17 +317,17 @@ a, button {
   display: block;
   position: fixed;
   z-index: 10;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   color: #000;
-  font-size: 30px;
+  font-size: 20px;
   background-color: rgba(0, 0, 0, .1);
   border-radius: 50%;
   cursor: pointer;
 }
 .prev-btn {
   left: 20px;
-  bottom: 100px;
+  bottom: 80px;
   visibility: hidden;
   opacity: 0;
 }
@@ -344,7 +344,7 @@ a, button {
   bottom: 20px;
 }
 .github-btn {
-  right: 100px;
+  right: 80px;
   bottom: 20px;
 }
 .prev-btn:hover,
@@ -382,15 +382,6 @@ a, button {
   transform: translateY(-50%);
   padding-left: 20px;
 }
-.prev-btn::after {
-  content: "prev";
-}
-.next-btn::after {
-  content: "next";
-}
-.next-btn.up::after {
-  content: "top";
-}
 .gomail-btn::after,
 .github-btn::after {
   bottom: 100%;
@@ -401,12 +392,6 @@ a, button {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   padding-bottom: 5px;
-}
-.gomail-btn::after {
-  content: "email";
-}
-.github-btn::after {
-  content: "github";
 }
 .prev-btn i,
 .next-btn i,
@@ -440,7 +425,7 @@ a, button {
 }
 
 .nav {
-  display: inline-block;
+  display: none;
   position: fixed;
   top: 50%;
   left: 48px;
@@ -501,40 +486,39 @@ a, button {
   z-index: 1;
 }
 .fp-section.fp-table {
-  width: 720px;
-  max-width: 100%;
-  margin: 0 auto;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .section .sub-text {
-  margin-bottom: 30px;
-  font-size: 16px;
+  margin-bottom: 15px;
+  font-size: 13px;
   color: #9C9C9C;
 }
 .section1 h2 {
   margin-bottom: 25px;
-  font-size: 100px;
+  font-size: 43px;
   font-weight: 100;
 }
 .section1 h2 small {
-  font-size: 25px;
+  display: block;
+  font-size: 20px;
   font-weight: 200;
 }
 .section1 h3 {
-  font-size: 25px;
+  font-size: 22px;
   font-weight: 200;
 }
 
 .section2 .strength-list li {
   margin-bottom: 10px;
-  font-size: 25px;
+  font-size: 14px;
   font-weight: 200;
 }
 .section2 .strength-list strong {
-  display: inline-block;
-  width: 150px;
-  margin-right: 20px;
-  font-size: 30px;
+  display: block;
+  font-size: 14px;
   font-weight: 700;
 }
 .section2 .strength-list li span {
@@ -544,34 +528,23 @@ a, button {
 .section3 .skill-row {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-}
-.section3 .skill-item {
-  -ms-flex-preferred-size: 0;
-  flex-basis: 0;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
-  max-width: 100%;
-  padding-right: 30px;
-  padding-bottom: 30px;
-}
-.section3 .skill-row .skill-item:last-child {
-  padding-right: 0;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  flex-direction: column;
 }
 .section3 .skill-item h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
+  margin-bottom: 5px;
+  font-size: 15px;
   font-weight: 700;
 }
 .section3 .skill-item .progress-bar {
-  height: 15px;
-  margin-bottom: 10px;
+  height: 10px;
+  margin-bottom: 5px;
   background-color: rgba(0, 0, 0, .1);
 }
 .section3 .skill-item .progress-bar-inner {
   width: 0%;
-  height: 15px;
+  height: 10px;
   background-color: rgba(0, 0, 0, .2);
 }
 .section3 .skill-item .progress-bar-inner.progressbar-animation3 {
@@ -646,6 +619,9 @@ a, button {
     width: 90%;
   }  
 }
+.section3 .skill-item p {
+  display: none;
+}
 
 .section4 .swiper-container {
   width: 100%;
@@ -665,9 +641,9 @@ a, button {
   -webkit-align-items: center;
   align-items: center;
   position: relative;
-  padding: 70px;
+  padding: 20px;
   font-size: 18px;
-  background-color: rgba(255, 255, 255, .8);
+  /* background-color: rgba(255, 255, 255, .8); */
   border-right: 1px solid rgba(217, 217, 217, .4);
 }
 .section4 .swiper-slide::after {
@@ -681,13 +657,13 @@ a, button {
   background-repeat: no-repeat;
   background-position: center left;
   background-size: cover;
-  opacity: 0;
+  opacity: .2;
   -webkit-transition: opacity 0.35s;
   -moz-transition: opacity 0.35s;
   transition: opacity 0.35s;
 }
 .section4 .swiper-slide:hover::after {
-  opacity: 1;
+  opacity: .2;
 }
 .section4 .swiper-slide:nth-child(1)::after {
   background-image: url(../images/trello.jpg);
@@ -720,31 +696,248 @@ a, button {
   margin-bottom: 10px;
 }
 .section4 .swiper-slide h3 {
-  font-size: 45px;
+  font-size: 30px;
 }
 
 .section5 h3 {
-  margin-bottom: 20px;
-  font-size: 40px;
+  margin-bottom: 10px;
+  font-size: 25px;
   font-weight: 300;
 }
 .section5 h3 small {
-  font-size: 20px;
+  display: block;
+  margin-top: 5px;
+  font-size: 15px;
   font-weight: 200;
 }
 .section5 .experience-list li {
-  margin-bottom: 20px;
-  font-size: 20px;
+  margin-bottom: 10px;
+  font-size: 14px;
   font-weight: 200;
 }
+.section5 .experience-list li:nth-child(4) {
+  margin-bottom: 0;
+}
 .section5 .experience-list strong {
-  display: inline-block;
-  width: 150px;
-  margin-right: 20px;
-  font-size: 20px;
+  display: block;
+  font-size: 14px;
   font-weight: 500;
 }
 
+@media (min-width: 768px) {
+  .logo img {
+    width: 120px;
+  }
+
+  .prev-btn::after {
+    content: "prev";
+  }
+  .next-btn::after {
+    content: "next";
+  }
+  .next-btn.up::after {
+    content: "top";
+  }
+  .gomail-btn::after {
+    content: "email";
+  }
+  .github-btn::after {
+    content: "github";
+  }
+
+  .menu ul {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+  .menu ul li {
+    border-right: 1px solid rgba(255, 255, 255, .05);
+  }
+
+  .nav {
+    display: inline-block;
+  }
+
+  .fp-section.fp-table {
+    width: 540px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section .sub-text {
+    margin-bottom: 30px;
+    font-size: 15px;
+  }
+
+  .section1 h2 {
+    font-size: 72px;
+  }
+  .section1 h2 small {
+    display: inline;
+    font-size: 25px;
+  }
+  .section1 h3 {
+    font-size: 25px;
+  }
+
+  .section2 .strength-list li {
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  .section2 .strength-list strong {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .section3 .skill-row {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .section3 .skill-item {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    padding-right: 30px;
+    padding-bottom: 30px;
+  }
+  .section3 .skill-row .skill-item:last-child {
+    padding-right: 0;
+  }
+  .section3 .skill-item h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+  .section3 .skill-item .progress-bar {
+    height: 15px;
+    margin-bottom: 10px;
+  }
+  .section3 .skill-item .progress-bar-inner {
+    height: 15px;
+  }
+  .section3 .skill-item p {
+    display: block;
+  }
+
+  .section4 .swiper-slide {
+    padding: 70px;
+  }
+
+  .section5 h3 {
+    margin-bottom: 20px;
+    font-size: 40px;
+  }
+  .section5 h3 small {
+    display: inline;
+    margin-top: 0;
+    font-size: 20px;
+  }
+  .section5 .experience-list li {
+    margin-bottom: 20px;
+    font-size: 17px;
+  }
+  .section5 .experience-list li:nth-child(4) {
+    margin-bottom: 20px;
+  }
+  .section5 .experience-list strong {
+    display: inline-block;
+    width: 135px;
+    margin-right: 20px;
+    font-size: 18px;
+  }
+}
+@media (min-width: 992px) {
+  .logo img {
+    width: 150px;
+  }
+
+  .menu-toggle {
+    width: 70px;
+    height: 70px;
+  }
+  .menu-toggle-inner {
+    width: 20px;
+    height: 15px;
+  }
+  .menu-toggle .menu-toggle-inner span:nth-child(2) {
+    top: 7px;
+  }
+  .menu-toggle .menu-toggle-inner span:nth-child(3) {
+    top: 14px;
+  }
+  .menu-toggle.open .menu-toggle-inner span:nth-child(1) {
+    top: 1px;
+    left: 3px;
+  }
+  .menu-toggle.open .menu-toggle-inner span:nth-child(3) {
+    top: 15px;
+    left: 3px;
+  }
+  .menu-overlay {
+    top: 55px;
+    right: 55px;
+  }
+
+  .menu a {
+    font-size: 35px;
+  }
+
+  .prev-btn,
+  .next-btn,
+  .gomail-btn,
+  .github-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+  }
+  .prev-btn {
+    bottom: 100px;
+  }
+  .github-btn {
+    right: 100px;
+  }
+
+  .fp-section.fp-table {
+    width: 720px;
+  }
+
+  .section1 h2 {
+    font-size: 100px;
+  }
+
+  .section2 .strength-list li {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  .section2 .strength-list strong {
+    display: inline-block;
+    width: 115px;
+    margin-right: 20px;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .section4 .swiper-slide::after {
+    opacity: 0;
+  }
+  .section4 .swiper-slide h3 {
+    font-size: 45px;
+  }
+
+  .section5 .experience-list li {
+    font-size: 20px;
+  }
+  .section5 .experience-list strong {
+    width: 150px;
+    font-size: 20px;
+  }
+}
 @media (min-width: 1200px) {
   .logo {
     top: 80px;
@@ -756,6 +949,9 @@ a, button {
   .menu-overlay {
     top: 100px;
     right: 60px;
+  }
+  .menu a {
+    font-size: 40px;
   }
   .prev-btn {
     left: 30px;
@@ -785,23 +981,19 @@ a, button {
   .fp-section.fp-table {
     width: 960px;
   }
+
+  .section .sub-text {
+    font-size: 16px;
+  }
   .section1 h2 {
     font-size: 118px;
   }
   .section2 .strength-list li {
-    margin-bottom: 10px;
     font-size: 25px;
-    font-weight: 200;
   }
   .section2 .strength-list strong {
-    display: inline-block;
     width: 150px;
-    margin-right: 20px;
     font-size: 30px;
-    font-weight: 700;
-  }
-  .section2 .strength-list li span {
-    font-weight: 500;
   }
 }
 @media (min-width: 1400px) {
