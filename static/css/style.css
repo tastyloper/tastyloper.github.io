@@ -518,6 +518,7 @@ a, button {
 }
 .section2 .strength-list strong {
   display: block;
+  margin-bottom: 3px;
   font-size: 14px;
   font-weight: 700;
 }
