@@ -180,9 +180,9 @@ $(document).ready(() => {
     $('.menu-toggle, .menu-overlay, .menu').toggleClass('open');
   });
 
-  $('.swiper-slide').click(() => {
-    $('.detail-overlay').toggleClass('open');
-  });
+  // $('.swiper-slide').click(() => {
+  //   $('.detail-overlay').toggleClass('open');
+  // });
 
   $('.next-btn').on('click', () => {
     if ($('.next-btn').hasClass('up')) {

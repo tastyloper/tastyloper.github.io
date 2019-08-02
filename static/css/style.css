@@ -1007,11 +1007,11 @@ a, button {
     font-size: 118px;
   }
   .section2 .strength-list li {
-    font-size: 25px;
+    font-size: 23px;
   }
   .section2 .strength-list strong {
-    width: 150px;
-    font-size: 30px;
+    width: 140px;
+    font-size: 28px;
   }
 }
 @media (min-width: 1400px) {
