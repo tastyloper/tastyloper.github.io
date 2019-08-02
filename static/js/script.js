@@ -3,9 +3,9 @@ function resizeNav() {
 
   const radius = Math.sqrt((window.innerHeight ** 2) + (window.innerWidth ** 2));
   const diameter = radius * 2;
-  $('.menu-overlay').width(diameter);
-  $('.menu-overlay').height(diameter);
-  $('.menu-overlay').css({ 'margin-top': -radius, 'margin-right': -radius });
+  $('.menu-overlay, .detail-overlay').width(diameter);
+  $('.menu-overlay, .detail-overlay').height(diameter);
+  $('.menu-overlay, .detail-overlay').css({ 'margin-top': -radius, 'margin-right': -radius });
 }
 
 $(document).ready(() => {
@@ -59,7 +59,7 @@ $(document).ready(() => {
     css3: true,
     easing: 'easeInOutCubic',
     scrollingSpeed: 700,
-    anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5'],
+    anchors: ['about', 'strength', 'skill', 'portfolio', 'experience'],
     slidesNavigation: false,
     keyboardScrolling: false,
 
@@ -178,6 +178,10 @@ $(document).ready(() => {
 
   $('.menu-toggle, .menu a').click(() => {
     $('.menu-toggle, .menu-overlay, .menu').toggleClass('open');
+  });
+
+  $('.swiper-slide').click(() => {
+    $('.detail-overlay').toggleClass('open');
   });
 
   $('.next-btn').on('click', () => {

@@ -481,6 +481,23 @@ a, button {
   opacity: 1;
 }
 
+.detail-overlay {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  z-index: -1;
+  background: rgba(0, 0, 0, .99);
+  border-radius: 50%;
+  transition: 1s;
+  -webkit-transform: scale3d(0, 0, 0);
+  transform: scale3d(0, 0, 0);
+}
+.detail-overlay.open {
+  z-index: 20;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+
 .content {
   position: relative;
   z-index: 1;
