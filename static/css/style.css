@@ -690,22 +690,22 @@ a, button {
   background-image: url(../images/dokudoku.jpg);
 }
 .section4 .swiper-slide:nth-child(3)::after {
-  background-image: url(../images/linc.png);
+  background-image: url(../images/linc.jpg);
 }
 .section4 .swiper-slide:nth-child(4)::after {
-  background-image: url(../images/edulab.png);
+  background-image: url(../images/edulab.jpg);
 }
 .section4 .swiper-slide:nth-child(5)::after {
-  background-image: url(../images/educ.png);
+  background-image: url(../images/educ.jpg);
 }
 .section4 .swiper-slide:nth-child(6)::after {
-  background-image: url(../images/neomir.png);
+  background-image: url(../images/neomir.jpg);
 }
 .section4 .swiper-slide:nth-child(7)::after {
-  background-image: url(../images/dualhub.png);
+  background-image: url(../images/dualhub.jpg);
 }
 .section4 .swiper-slide:nth-child(8)::after {
-  background-image: url(../images/conc.png);
+  background-image: url(../images/conc.jpg);
 }
 .section4 .swiper-slide a {
   display: block;
