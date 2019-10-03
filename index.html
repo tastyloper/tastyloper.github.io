@@ -82,6 +82,47 @@
     </ul>
 
     <div class="detail-overlay"></div>
+    <div class="detail-wrap">
+      <div class="detail-title-wrap">
+        <p id="detail-sub-title">패스트캠퍼스 최종프로젝트</p>
+        <h5 id="detail-title">야 너도 놀수있어</h5>
+      </div>
+      <div class="detail-img-wrap">
+        <img id="detail-img" src="./static/images/yanolja.jpg" alt="야 너도 놀수있어">
+      </div>
+      <div class="detail-text-wrap">
+        <dl class="detail-text">
+          <dt>설명</dt>
+          <dd id="detail-explan">프론트엔드, 백엔드, IOS가 함께하는 첫 프로젝트인 만큼 각 팀별로 서로 윈윈할 수 있으면서,
+              너무 쉽지도 너무 과하지 않은 도전적 과제인 야놀자(https://www.yanolja.com/) 웹페이지를 클론 하여 개발,
+              UX/UI를 고려하여 더욱 트렌디한 디자인으로 변경하여 적용.</dd>
+          <dt>사용기술</dt>
+          <dd id="detail-tech">Angular, Typescript, HTML5, CSS3, Git, GitHub, Slack, Google Drive</dd>
+          <dt>팀구성</dt>
+          <dd id="detail-team">패스트캠퍼스 학생 10명(프론트엔드 4명, 백엔드 3명, IOS 3명)</dd>
+          <dt>역할</dt>
+          <dd id="detail-role">프론트엔드 팀장을 맡아 전체 기획, 설계, 일정 수립과 조율 담당하였고
+              패스트캠퍼스 프론트앤드 스쿨에서 배운 Angular로 전체적인 구조를 잡고 모듈별로 분리하여
+              팀원들에게 분배하고 메인 페이지를 비롯해 회원관리(로그인, 회원가입) 개발</dd>
+        </dl>
+      </div>
+
+      <a id="detail-url" class="detail-url" href="http://www.yanoljamvp.com/" target="_blank">
+        <i class="fa fa-globe" aria-hidden="true"></i>
+      </a>
+  
+      <a id="detail-github" class="detail-github" href="https://github.com/tastyloper/yanolja-frontend" target="_blank">
+        <i class="fa fa-github" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <a class="detail-close">
+      <div class="detail-close-inner">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </a>
   
     <div class="content" id="fullpage">
       <section class="section section1 active">
@@ -196,49 +237,109 @@
         <div class="slide">
           <div class="swiper-container">
             <div class="swiper-wrapper">
-              <a class="swiper-slide">
+              <a class="swiper-slide" data-img="yanolja"
+                  data-explan="프론트엔드, 백엔드, IOS가 함께하는 첫 프로젝트인 만큼 각 팀별로 서로 윈윈할 수 있으면서, 너무 쉽지도 너무 과하지 않은 도전적 과제인 야놀자(https://www.yanolja.com/) 웹페이지를 클론 하여 개발, UX/UI를 고려하여 더욱 트렌디한 디자인으로 변경하여 적용."
+                  data-tech="Angular, Typescript, HTML5, CSS3, Git, GitHub, Slack, Google Drive"
+                  data-team="패스트캠퍼스 학생 10명(프론트엔드 4명, 백엔드 3명, IOS 3명)"
+                  data-role="프론트엔드 팀장을 맡아 전체 기획, 설계, 일정 수립과 조율 담당하였고 패스트캠퍼스 프론트앤드 스쿨에서 배운 Angular로 전체적인 구조를 잡고 모듈별로 분리하여 팀원들에게 분배하고 메인 페이지를 비롯해 회원관리(로그인, 회원가입) 개발"
+                  data-url="http://www.yanoljamvp.com/"
+                  data-github="https://github.com/tastyloper/yanolja-frontend">
+                <div>
+                  <p class="sub-text animated1">패스트캠퍼스 최종프로젝트</p>
+                  <h3 class="animated2">야 너도 놀수있어</h3>
+                </div>
+              </a>
+              <a class="swiper-slide" data-img="trello"
+                  data-explan="패스트캠퍼스에서 열린 해커톤에서 참여한 프로젝트로 많이 사용하는 Trello 서비스를 한번 구현해보고 싶은 생각에 Trello 서비스를 클론하는 것을 목적으로 했던 해커톤 프로젝트로 1등상인 기술상을 받음"
+                  data-tech="Angular, Typescript, HTML5, CSS3, Git, GitHub, Slack, Google Drive"
+                  data-team="패스트캠퍼스 학생 5명(프론트엔드 3명, 백엔드 2명)"
+                  data-role="프론트엔드 팀장을 맡아 전체 기획, 설계, 일정 수립과 조율 담당하였고 패스트캠퍼스 프론트앤드 스쿨에서 배운 Angular로 전체적인 구조를 잡고 모듈별로 분리하여 팀원들에게 분배하고 메인 기능인 Drag & Drop 기능을 구현"
+                  data-url="https://tastyloper.github.io/CloneTrelloAngularWeb/"
+                  data-github="https://github.com/tastyloper/CloneTrelloAngularWeb">
                 <div>
                   <p class="sub-text animated1">패스트캠퍼스 해커톤</p>
                   <h3 class="animated2">클론 Trello</h3>
                 </div>
               </a>
-              <a class="swiper-slide">
+              <a class="swiper-slide" data-img="dokudoku"
+                  data-explan="패스트캠퍼스에서 열린 해커톤에서 참여한 프로젝트로 Javascript를 이용하여 스도쿠 문제를 만들어본 해커톤 프로젝트"
+                  data-tech="Javascript, HTML5, CSS3, Git, GitHub, Slack, Google Drive"
+                  data-team="패스트캠퍼스 프론트앤드 2명"
+                  data-role="팀장을 맡아서 설계와 기획, 역할 분배를 하였고 메인 기능인 랜덤 문제 생성 기능과 정답 확인 기능을 구현"
+                  data-url="https://tastyloper.github.io/DOKUDOKU/"
+                  data-github="https://github.com/tastyloper/DOKUDOKU">
                 <div>
                   <p class="sub-text animated1">패스트캠퍼스 해커톤</p>
                   <h3 class="animated2">DOKUDOKU</h3>
                 </div>
               </a>
-              <a class="swiper-slide">
+              <a class="swiper-slide" data-img="linc"
+                  data-explan="충남도립대학교 내에 있는 LINC+ 기업신속대응센터에서 홈페이지 제작 의뢰를 받아 개발한 홈페이지"
+                  data-tech="jQuery, Javascript, HTML5, CSS3, Git, Bitbucket, Google Drive"
+                  data-team="(주)앙클 소속 퍼블리셔 1명, 디자이너 1명, 백엔드 1명"
+                  data-role="기획 및 설계, 일정관리에 참여하고 전체 퍼블리싱을 담당, 크로스 브라우징을 고려하여 HTML/CSS로 반응형 퍼블리싱"
+                  data-url="http://linc.cnsu.ac.kr/"
+                  data-github="">
                 <div>
                   <p class="sub-text animated1">충남도립대학교 LINC+</p>
                   <h3 class="animated2">기업신속대응센터</h3>
                 </div>
               </a>
-              <a class="swiper-slide">
+              <a class="swiper-slide" data-img="edulab"
+                  data-explan="교육시설재난공제회 연구실 안전공제 홈페이지 제작 의뢰를 받아 개발한 홈페이지"
+                  data-tech="jQuery, Javascript, HTML5, CSS3, Git, Bitbucket, Google Drive"
+                  data-team="(주)앙클 소속 퍼블리셔 1명, 디자이너 1명, 백엔드 1명"
+                  data-role="기획 및 설계, 일정관리에 참여하고 전체 퍼블리싱을 담당, 크로스 브라우징을 고려하여 HTML/CSS로 반응형 퍼블리싱"
+                  data-url="http://www.edulab.or.kr/"
+                  data-github="">
                 <div>
                   <p class="sub-text animated1">교육시설재난공제회</p>
                   <h3 class="animated2">연구실 안전공제</h3>
                 </div>
               </a>
-              <a class="swiper-slide">
+              <a class="swiper-slide" data-img="educ"
+                  data-explan="남사회적기업협회 충남사회적기업 교육시설·프로그램 홈페이지 제작 의뢰를 받아 개발한 홈페이지"
+                  data-tech="jQuery, Javascript, HTML5, CSS3, Git, Bitbucket, Google Drive"
+                  data-team="(주)앙클 소속 퍼블리셔 1명, 디자이너 1명, 백엔드 1명"
+                  data-role="기획 및 설계, 일정관리에 참여하고 전체 퍼블리싱을 담당, 크로스 브라우징을 고려하여 HTML/CSS로 반응형 퍼블리싱"
+                  data-url="https://edu-c.net/"
+                  data-github="">
                 <div>
                   <p class="sub-text animated1">충남문화산업진흥원</p>
                   <h3 class="animated2">EDU-C</h3>
                 </div>
               </a>
-              <a class="swiper-slide">
+              <a class="swiper-slide" data-img="neomir"
+                  data-explan="네오미르 메카베이스 쇼핑몰 리뉴얼 의뢰를 받아 진행했던 프로젝트"
+                  data-tech="HTML5, CSS3, PHP(cafe 24), Google Drive"
+                  data-team="(주)앙클 소속 퍼블리셔 1명, 디자이너 1명"
+                  data-role="HTML/CSS로 데스크탑, 모바일 퍼블리싱 및 기능 추가 담당"
+                  data-url="http://neomir.co.kr/"
+                  data-github="">
                 <div>
                   <p class="sub-text animated1">네오미르</p>
                   <h3 class="animated2">메카베이스</h3>
                 </div>
               </a>
-              <a class="swiper-slide">
+              <a class="swiper-slide" data-img="dualhub"
+                  data-explan="한국기술교육대 듀얼훈련공동센터 허브사업단 홈페이지 제작 의뢰를 받아 개발한 홈페이지"
+                  data-tech="jQuery, Javascript, HTML5, CSS3, Git, Bitbucket, Google Drive"
+                  data-team="(주)앙클 소속 퍼블리셔 1명, 디자이너 1명, 백엔드 1명"
+                  data-role="기획 및 설계, 일정관리에 참여하고 전체 퍼블리싱을 담당, 크로스 브라우징을 고려하여 HTML/CSS로 반응형 퍼블리싱"
+                  data-url="https://dualhub.or.kr/"
+                  data-github="">
                 <div>
                   <p class="sub-text animated1">한국기술교육대</p>
                   <h3 class="animated2">듀얼훈련공동센터 허브사업단</h3>
                 </div>
               </a>
-              <a class="swiper-slide">
+              <a class="swiper-slide" data-img="conc"
+                  data-explan="충남문화산업진흥원 CONTENTS C 홈페이지 고도화 의뢰를 받아 개발한 홈페이지"
+                  data-tech="jQuery, Javascript, HTML5, CSS3, Git, Bitbucket, Google Drive"
+                  data-team="(주)앙클 소속 퍼블리셔 1명, 디자이너 1명, 백엔드 1명"
+                  data-role="기획 및 설계, 일정관리에 참여하고 전체 퍼블리싱을 담당, 크로스 브라우징을 고려하여 HTML/CSS로 반응형 퍼블리싱"
+                  data-url="https://con-c.com/"
+                  data-github="">
                 <div>
                   <p class="sub-text animated1">충남문화산업진흥원</p>
                   <h3 class="animated2">CON-C</h3>

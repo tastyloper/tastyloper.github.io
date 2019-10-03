@@ -165,7 +165,8 @@ a, button {
 .menu-toggle:hover {
   background-color: rgba(0, 0, 0, 1);
 }
-.menu-toggle::after {
+.menu-toggle::after,
+.detail-close::after {
   content: "menu";
   position: absolute;
   top: 50%;
@@ -188,12 +189,17 @@ a, button {
 .menu-toggle.open {
   background-color: #FFF;
 }
-.menu-toggle.open::after {
+.menu-toggle.open::after,
+.detail-close.open::after {
   content: "close";
   color: #FFF;
   opacity: 1;
 }
-.menu-toggle-inner {
+.detail-close.open::after {
+  display: none;
+}
+.menu-toggle-inner,
+.detail-close-inner {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -205,7 +211,8 @@ a, button {
   width: 15px;
   height: 12px;
 }
-.menu-toggle .menu-toggle-inner span {
+.menu-toggle .menu-toggle-inner span,
+.detail-close .detail-close-inner span {
   content: '';
   display: block;
   position: absolute;
@@ -223,30 +230,41 @@ a, button {
   -webkit-transform-origin: left center;
   transform-origin: left center;
 }
-.menu-toggle .menu-toggle-inner span:nth-child(2) {
+.detail-close .detail-close-inner span:nth-child(1) {
+  top: 1px;
+  -webkit-transform-origin: left center;
+  transform-origin: left center;
+}
+.menu-toggle .menu-toggle-inner span:nth-child(2),
+.detail-close .detail-close-inner span:nth-child(2) {
   top: 5px;
   -webkit-transform-origin: left center;
   transform-origin: left center;
 }
-.menu-toggle .menu-toggle-inner span:nth-child(3) {
+.menu-toggle .menu-toggle-inner span:nth-child(3),
+.detail-close .detail-close-inner span:nth-child(3) {
   top: 10px;
   -webkit-transform-origin: left center;
   transform-origin: left center;
 }
-.menu-toggle.open .menu-toggle-inner span {
+.menu-toggle.open .menu-toggle-inner span,
+.detail-close.open .detail-close-inner span {
   background-color: #000;
 }
-.menu-toggle.open .menu-toggle-inner span:nth-child(1) {
+.menu-toggle.open .menu-toggle-inner span:nth-child(1),
+.detail-close.open .detail-close-inner span:nth-child(1) {
   top: 0;
   left: 2px;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-.menu-toggle.open .menu-toggle-inner span:nth-child(2) {
+.menu-toggle.open .menu-toggle-inner span:nth-child(2),
+.detail-close.open .detail-close-inner span:nth-child(2) {
   width: 0%;
   opacity: 0;
 }
-.menu-toggle.open .menu-toggle-inner span:nth-child(3) {
+.menu-toggle.open .menu-toggle-inner span:nth-child(3),
+.detail-close.open .detail-close-inner span:nth-child(3) {
   top: 11px;
   left: 2px;
   -webkit-transform: rotate(-45deg);
@@ -483,19 +501,171 @@ a, button {
 
 .detail-overlay {
   position: absolute;
-  top: 0;
-  right: 100%;
+  top: 50%;
+  left: 50%;
   z-index: -1;
   background: rgba(0, 0, 0, .99);
   border-radius: 50%;
   transition: 1s;
-  -webkit-transform: scale3d(0, 0, 0);
-  transform: scale3d(0, 0, 0);
+  -webkit-transform: translate(-50%, -50%) scale3d(0, 0, 0);
+  transform: translate(-50%, -50%) scale3d(0, 0, 0);
 }
 .detail-overlay.open {
   z-index: 20;
-  -webkit-transform: scale3d(1, 1, 1);
-  transform: scale3d(1, 1, 1);
+  -webkit-transform: translate(-50%, -50%) scale3d(2, 2, 2);
+  transform: translate(-50%, -50%) scale3d(2, 2, 2);
+}
+.detail-wrap {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -5;
+  width: 100%;
+  transition: ease-in-out 0.25s;
+  transition-delay: 0s;
+  visibility: hidden;
+  opacity: 0;
+}
+.detail-wrap.open {
+  z-index: 22;
+  visibility: visible;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
+  transition-delay: 0.2s;
+}
+.detail-title-wrap {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 185px;
+  color: #CCC;
+}
+.detail-title-wrap h5 {
+  color: #FFF;
+  font-size: 18px;
+}
+.detail-img-wrap {
+  display: none;
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  left: 20px;
+  right: calc(60% + 10px);
+}
+.detail-img-wrap img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+}
+.detail-text-wrap {
+  overflow-y: auto;
+  position: absolute;
+  top: 90px;
+  bottom: 90px;
+  left: 20px;
+  right: 20px;
+}
+.detail-text-wrap .detail-text {
+  color: #FFF;
+}
+.detail-text-wrap .detail-text dt {
+  font-weight: 700;
+  font-size: 16px;
+}
+.detail-text-wrap .detail-text dd {
+  font-size: 14px;
+}
+.detail-text-wrap .detail-text dd + dt {
+  margin-top: 5px;
+}
+.detail-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: -1;
+  width: 50px;
+  height: 50px;
+  background: #FFF;
+  border-radius: 50%;
+}
+.detail-close.open {
+  z-index: 25;
+}
+.detail-url,
+.detail-github {
+  display: block;
+  position: fixed;
+  z-index: 10;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  color: #FFF;
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.detail-url:hover,
+.detail-github:hover {
+  color: #FFF;
+  background-color: rgba(255, 255, 255, .2);
+}
+.detail-url::after,
+.detail-github::after {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  bottom: auto;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
+  padding-top: 5px;
+  padding-bottom: 0;
+  color: #FFF;
+  font-size: 14px;
+  text-transform: uppercase;
+  opacity: 0;
+}
+.detail-url:hover::after,
+.detail-github:hover::after {
+  opacity: 1;
+}
+.detail-url::after {
+  content: "website";
+}
+.detail-github::after {
+  content: "github";
+}
+.detail-url {
+  right: 20px;
+}
+.detail-github {
+  right: 80px;
+}
+.detail-url i,
+.detail-github i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.35s;
+  -moz-transition: all 0.35s;
+  transition: all 0.35s;
 }
 
 .content {
@@ -684,27 +854,30 @@ a, button {
   opacity: .2;
 }
 .section4 .swiper-slide:nth-child(1)::after {
-  background-image: url(../images/trello.jpg);
+  background-image: url(../images/yanolja.jpg);
 }
 .section4 .swiper-slide:nth-child(2)::after {
-  background-image: url(../images/dokudoku.jpg);
+  background-image: url(../images/trello.jpg);
 }
 .section4 .swiper-slide:nth-child(3)::after {
-  background-image: url(../images/linc.jpg);
+  background-image: url(../images/dokudoku.jpg);
 }
 .section4 .swiper-slide:nth-child(4)::after {
-  background-image: url(../images/edulab.jpg);
+  background-image: url(../images/linc.jpg);
 }
 .section4 .swiper-slide:nth-child(5)::after {
-  background-image: url(../images/educ.jpg);
+  background-image: url(../images/edulab.jpg);
 }
 .section4 .swiper-slide:nth-child(6)::after {
-  background-image: url(../images/neomir.jpg);
+  background-image: url(../images/educ.jpg);
 }
 .section4 .swiper-slide:nth-child(7)::after {
-  background-image: url(../images/dualhub.jpg);
+  background-image: url(../images/neomir.jpg);
 }
 .section4 .swiper-slide:nth-child(8)::after {
+  background-image: url(../images/dualhub.jpg);
+}
+.section4 .swiper-slide:nth-child(9)::after {
   background-image: url(../images/conc.jpg);
 }
 .section4 .swiper-slide a {
@@ -715,6 +888,20 @@ a, button {
 }
 .section4 .swiper-slide h3 {
   font-size: 30px;
+}
+.section4 .swiper-slide .detail-wrap {
+  position: fixed;
+  top: 70px;
+  left: 70px;
+  right: 70px;
+  bottom: 70px;
+  z-index: -1;
+  opacity: 0;
+  background-color: #FFF;
+}
+.section4 .swiper-slide .detail-wrap.open {
+  z-index: 21;
+  opacity: 1;
 }
 
 .section5 h3 {
@@ -770,6 +957,32 @@ a, button {
   }
   .menu ul li {
     border-right: 1px solid rgba(255, 255, 255, .05);
+  }
+
+  .detail-title-wrap {
+    width: auto;
+  }
+  .detail-title-wrap h5 {
+    font-size: 40px;
+  }
+  .detail-text-wrap {
+    overflow-y: inherit;
+    top: 20px;
+    bottom: 20px;
+  }
+  .detail-text-wrap .detail-text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+  }
+  .detail-close.open::after {
+    display: block;
   }
 
   .nav {
@@ -874,25 +1087,31 @@ a, button {
     width: 150px;
   }
 
-  .menu-toggle {
+  .menu-toggle,
+  .detail-close {
     width: 70px;
     height: 70px;
   }
-  .menu-toggle-inner {
+  .menu-toggle-inner,
+  .detail-close-inner {
     width: 20px;
     height: 15px;
   }
-  .menu-toggle .menu-toggle-inner span:nth-child(2) {
+  .menu-toggle .menu-toggle-inner span:nth-child(2),
+  .detail-close .detail-close-inner span:nth-child(2) {
     top: 7px;
   }
-  .menu-toggle .menu-toggle-inner span:nth-child(3) {
+  .menu-toggle .menu-toggle-inner span:nth-child(3),
+  .detail-close .detail-close-inner span:nth-child(3) {
     top: 14px;
   }
-  .menu-toggle.open .menu-toggle-inner span:nth-child(1) {
+  .menu-toggle.open .menu-toggle-inner span:nth-child(1),
+  .detail-close.open .detail-close-inner span:nth-child(1) {
     top: 1px;
     left: 3px;
   }
-  .menu-toggle.open .menu-toggle-inner span:nth-child(3) {
+  .menu-toggle.open .menu-toggle-inner span:nth-child(3),
+  .detail-close.open .detail-close-inner span:nth-child(3) {
     top: 15px;
     left: 3px;
   }
@@ -908,7 +1127,9 @@ a, button {
   .prev-btn,
   .next-btn,
   .gomail-btn,
-  .github-btn {
+  .github-btn,
+  .detail-url,
+  .detail-github {
     width: 70px;
     height: 70px;
     font-size: 30px;
@@ -916,8 +1137,25 @@ a, button {
   .prev-btn {
     bottom: 100px;
   }
-  .github-btn {
+  .github-btn,
+  .detail-github {
     right: 100px;
+  }
+
+  .detail-img-wrap {
+    display: block;
+  }
+  .detail-text-wrap {
+    left: calc(40% + 10px);
+  }
+  .detail-text-wrap .detail-text dt {
+    font-size: 22px;
+  }
+  .detail-text-wrap .detail-text dd {
+    font-size: 20px;
+  }
+  .detail-text-wrap .detail-text dd + dt {
+    margin-top: 15px;
   }
 
   .fp-section.fp-table {
@@ -960,7 +1198,8 @@ a, button {
   .logo {
     top: 80px;
   }
-  .menu-toggle {
+  .menu-toggle,
+  .detail-close {
     top: 70px;
     right: 30px;
   }
@@ -979,19 +1218,41 @@ a, button {
     left: 30px;
     bottom: 70px;
   }
-  .gomail-btn {
+  .gomail-btn,
+  .detail-url {
     right: 30px;
     bottom: 70px;
   }
-  .github-btn {
+  .github-btn,
+  .detail-github {
     right: 110px;
     bottom: 70px;
-  }.gomail-btn::after,
-  .github-btn::after {
+  }
+  .gomail-btn::after,
+  .github-btn::after,
+  .detail-url::after,
+  .detail-github::after {
     top: 100%;
     bottom: auto;
     padding-top: 5px;
     padding-bottom: 0;
+  }
+  .detail-title-wrap {
+    top: 70px;
+    left: 70px;
+  }
+  .detail-img-wrap,
+  .detail-text-wrap {
+    top: 70px;
+    bottom: 70px;
+  }
+  .detail-img-wrap {
+    left: 70px;
+    right: calc(50% + 35px);
+  }
+  .detail-text-wrap {
+    left: calc(50% + 35px);
+    right: 70px;
   }
   .nav {
     left: 58px;
@@ -1018,7 +1279,8 @@ a, button {
   .logo {
     left: 60px;
   }
-  .menu-toggle {
+  .menu-toggle,
+  .detail-close {
     right: 70px;
   }
   .menu-overlay {
@@ -1030,10 +1292,12 @@ a, button {
   .next-btn {
     left: 70px;
   }
-  .gomail-btn {
+  .gomail-btn,
+  .detail-url {
     right: 70px;
   }
-  .github-btn {
+  .github-btn,
+  .detail-github {
     right: 150px;
   }
   .nav {
