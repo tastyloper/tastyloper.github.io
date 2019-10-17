@@ -1,27 +1,35 @@
 {
   "name": "tastyloper.github.io",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.1.0",
+  "private": true,
+  "dependencies": {
+    "gh-pages": "^2.1.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-id-swiper": "^2.3.2",
+    "react-scripts": "3.2.0",
+    "swiper": "^5.1.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tastyloper/tastyloper.github.io.git"
+  "eslintConfig": {
+    "extends": "react-app"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tastyloper/tastyloper.github.io/issues"
-  },
-  "homepage": "https://github.com/tastyloper/tastyloper.github.io#readme",
-  "devDependencies": {
-    "eslint": "^6.1.0",
-    "eslint-config-airbnb-base": "^13.2.0",
-    "eslint-plugin-html": "^6.0.0",
-    "eslint-plugin-import": "^2.18.2"
-  },
-  "dependencies": {}
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
