@@ -434,6 +434,58 @@ img {
   cursor: pointer;
 }
 
+.location-wrap {
+  padding: 50px 16px;
+}
+
+.location-text {
+  margin: 3px 0 0;
+  font-size: 1.05rem;
+}
+
+.location-addr {
+  margin: 0 0 30px;
+  font-size: .95rem;
+  color: #797979;
+}
+
+#map {
+  width: 100%;
+  height: 15rem;
+}
+
+.location-btns {
+  display: flex;
+  padding: 8px 10px;
+  background: #f2eeee;
+}
+
+.location-btn {
+  flex: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  color: #000;
+  font-size: .7rem;
+  height: 1.1rem;
+  border-right: 1px solid rgba(97,80,67,.15);
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.location-btn:last-child {
+  border-right: 0;
+}
+
+.location-btn img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
 
 
 .swiper-modal {

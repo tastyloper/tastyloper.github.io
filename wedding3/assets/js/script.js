@@ -1,33 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function() {
-//   var lazyloadImages = document.querySelectorAll("img.lazy");    
-//   var lazyloadThrottleTimeout;
-  
-//   function lazyload () {
-//     if(lazyloadThrottleTimeout) {
-//       clearTimeout(lazyloadThrottleTimeout);
-//     }    
-    
-//     lazyloadThrottleTimeout = setTimeout(function() {
-//         var scrollTop = window.pageYOffset;
-//         lazyloadImages.forEach(function(img) {
-//           if(img.offsetTop < (window.innerHeight + scrollTop)) {
-//             img.src = img.dataset.src;
-//             img.classList.remove('lazy');
-//           }
-//         });
-//         if(lazyloadImages.length == 0) { 
-//           document.removeEventListener("scroll", lazyload);
-//           window.removeEventListener("resize", lazyload);
-//           window.removeEventListener("orientationChange", lazyload);
-//         }
-//     }, 20);
-//   }
-  
-//   document.addEventListener("scroll", lazyload);
-//   window.addEventListener("resize", lazyload);
-//   window.addEventListener("orientationChange", lazyload);
-// });
-
+// 이미지
 if ("IntersectionObserver" in window) {
   const images = document.querySelectorAll("img.lazy");
 
@@ -52,6 +23,39 @@ if ("IntersectionObserver" in window) {
   });
 }
 
+
+// 지도
+const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+const options = { //지도를 생성할 때 필요한 기본 옵션
+	center: new kakao.maps.LatLng(36.78974500920024, 127.17467974675908), //지도의 중심좌표.
+	level: 4 //지도의 레벨(확대, 축소 정도)
+};
+
+const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+const markerPosition  = new kakao.maps.LatLng(36.78974500920024, 127.17467974675908); 
+
+// 마커를 생성합니다
+const marker = new kakao.maps.Marker({
+  position: markerPosition
+});
+
+// 마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);
+
+
+// 카카오 네비 연결
+Kakao.init('de450455a52442b40dc28fb0bac53673'); // 사용하려는 앱의 JavaScript 키 입력
+function startNavigation() {
+  Kakao.Navi.start({
+    name: '천안웨딩베리컨벤션',
+    x: 127.17467974675908,
+    y: 36.78974500920024,
+    coordType: 'wgs84',
+  });
+}
+
+// 스와이퍼
 const swiper = new Swiper(".swiper", {
   lazy: true,
   navigation: {
@@ -85,6 +89,8 @@ document.querySelector(".swiper-modal-close-btn").addEventListener("click", (e) 
   }
 });
 
+
+// 갤러리 버튼
 const galleryMoreBtn = document.querySelector('.gallery-more-btn');
 const galleryContents = document.querySelector('.gallery-contents');
 
